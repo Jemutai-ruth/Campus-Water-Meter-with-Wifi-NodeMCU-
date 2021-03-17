@@ -9,8 +9,7 @@
 //set these to run
 #define FIREBASE_HOST"flowrate-7d99b-default-rtdb.firebaseio.com"
 #define FIREBASE_AUTH"3LfKKfnsxFpTMoerPSV0n5im3yLjq8ZoV1OKNsjj"
-#define WIFI_PASSWORD"your wifi password"
-#define WIFI_SSID"wifiname"
+
 
   
 
@@ -36,8 +35,8 @@ unsigned long totalLitres;
 unsigned long oldTime;
 
 //SSID and PASSWORD for the AP (swap the XXXXX for real ssid and password )
-//const char * ssid = "Incubator";
-//const char * password = "Incubator#2013";
+const char * ssid = "Your WiFi ssid";
+const char * password = "Your WiFi Password";
 
 FirebaseData firebaseData;
 FirebaseData ledData;

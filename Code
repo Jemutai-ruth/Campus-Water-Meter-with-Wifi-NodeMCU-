@@ -12,7 +12,7 @@
 
 
 // Variable initialization
-const int buttonPin = D2; // variable for D2 pin
+const int flowmeterPin = D2; // variable for D2 pin
 const int ledPin = D7;
 //char push_data[200]; //string used to send info to the server
 //int addr = 0; //endereço eeprom
@@ -81,15 +81,13 @@ void startWIFI(void) {
 void setup() {
     Serial.begin(115200);
   EEPROM.begin(512);
-  
-  Serial.begin(115200); // Start the Serial communication to send messages to the computer
   delay(10);
   Serial.println('\n');
 
 startWIFI();
 
   // Initialization of the variable “buttonPin” as INPUT (D2 pin)
-  pinMode(buttonPin, INPUT);
+  pinMode(flowmeterPin, INPUT);
 
   // Two types of blinking
   // 1: Connecting to Wifi
@@ -103,8 +101,8 @@ startWIFI();
   
   oldTime = 0;
 
-  digitalWrite(buttonPin, HIGH);
-  attachInterrupt(digitalPinToInterrupt(buttonPin), pulseCounter, FALLING);
+  digitalWrite(flowmeterPin, HIGH);
+  attachInterrupt(digitalPinToInterrupt(flowmeterPin), pulseCounter, FALLING);
 
 }
 

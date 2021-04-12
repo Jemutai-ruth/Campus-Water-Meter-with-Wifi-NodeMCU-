@@ -32,6 +32,12 @@ unsigned long totalLitres;
 unsigned long oldTime;
 int addr = 0;
 
+const long oneSecond = 1000;  // a second is a thousand milliseconds
+	const long oneMinute = oneSecond * 60;
+	const long oneHour   = oneMinute * 60;
+	const long fourHours    = oneHour * 4;
+
+
 //replace the **** with your ssid and password
 const char * ssid = "****";
 const char * password = "****";
@@ -160,7 +166,7 @@ void loop() {
 
     if (flowRate > 0) {
       digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)
-      delay(14400000);
+      delay(fourHours);
 
      if (Firebase.pushFloat(firebaseData, "/FirebaseIOT/flowRate", flowRate))
   {
